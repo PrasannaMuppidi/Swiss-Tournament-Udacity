@@ -7,20 +7,20 @@ and writing the code that will use it.
 
 ## Files:
 
-tournament.py
+1. `tournament.py`
 
-This file contains the implementation for the Swiss system tournament
+This Python file contains the implementation for the Swiss system tournament
 
-tournament.sql
+2. `tournament.sql`
 
-This file contains the SQL queries to create 
+This SQL file contains the SQL queries to create 
  1. one Database(`tournament`),
  2. two Tables(`players`, `Matches`)
  3. one View(`standings`)
 
-tournament_test.py
+3. `tournament_test.py`
 
-This file contains the test cases for `tournament.py`
+This Pyhton file contains the test cases for `tournament.py`
 
 ## How to run:
 
