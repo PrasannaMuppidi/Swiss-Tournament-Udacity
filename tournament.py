@@ -78,12 +78,15 @@ def playerStandings():
     query = "SELECT * FROM standings"
     cursor.execute(query)
     results = cursor.fetchall()
+    """The below query is to print the results only
+        when there is a winner or there is a tie. Not a mandatory if statement"""
     if (results[0][2] != 0) and (results[0][2] == results[1][2]):
         query = "SELECT player_id, player_name, matches_won, matches_played " \
-                "FROM standings ORDER BY (cast(matches_won AS DECIMAL)/matches_played) DESC;"
+                "FROM standings ORDER BY " \
+                "(cast(matches_won AS DECIMAL)/matches_played) DESC;"
         cursor.execute(query)
         results = cursor.fetchall()
-    con.close()
+    conn.close()
     return results
     
 
@@ -96,7 +99,8 @@ def reportMatch(winner, loser):
     """
     conn = connect()
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO matches (winner, loser) VALUES (%s, %s)", (winner, loser,))
+    cursor.execute("INSERT INTO matches (winner, loser) VALUES (%s, %s)",
+                   (winner, loser,))
     conn.commit()
     conn.close()
  

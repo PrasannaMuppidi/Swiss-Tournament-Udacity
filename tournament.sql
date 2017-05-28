@@ -9,14 +9,6 @@ CREATE DATABASE tournament;
 -- Connect to the database
 \c tournament
 
--- Drop table 'players' if it exists
-DROP TABLE IF EXISTS players CASCADE;
-
--- Drop table 'matches' if it exists
-DROP TABLE IF EXISTS matches CASCADE;
-
--- Drop view 'standings' if it exists
-DROP VIEW IF EXISTS standings CASCADE;
 
 -- Creates players table
 CREATE TABLE players(
@@ -30,17 +22,17 @@ CREATE TABLE matches (
   match_id serial PRIMARY KEY,
   winner INTEGER,
   loser INTEGER,
-  FOREIGN KEY(winner) REFERENCES player(player_id),
-  FOREIGN KEY(loser) REFERENCES player(player_id)
+  FOREIGN KEY(winner) REFERENCES players(player_id),
+  FOREIGN KEY(loser) REFERENCES players(player_id)
 );
 
 
--- Creates a view of matches played sorted by won count
+-- Creates a view of matches played sorted by matches_won count
 CREATE VIEW standings AS
 SELECT p.player_id as player_id, p.player_name,
 (SELECT count(*) FROM matches WHERE matches.winner = p.player_id) as matches_won,
 (SELECT count(*) FROM matches WHERE p.player_id in (winner, loser)) as matches_played
 FROM players p
 GROUP BY p.player_id
-ORDER BY won DESC;
+ORDER BY matches_won DESC;
 
