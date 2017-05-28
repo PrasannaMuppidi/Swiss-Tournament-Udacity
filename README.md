@@ -5,19 +5,25 @@ players are not eliminated, and each player should be paired with another player
 or as close as possible.  This project has two parts: defining the database schema (SQL table definitions), 
 and writing the code that will use it.
 
-Files:
+## Files:
 
 tournament.py
+
 Contains the implementation for the Swiss system tournament
 
 tournament.sql
-Contains the SQL queries to create one database(tournament), 2 tables(players, Matches) and 1 View(standings)
+
+Contains the SQL queries to create 
+ 1. one database(tournament),
+ 2. two tables(players, Matches)
+ 3. one View(standings)
 
 tournament_test.py
+
 Contains the test cases for tournament.py
 
-How to run:
+## How to run:
 
 1. In Vagrant open psql and copy the psql commands from tournament.sql and run 
 2. Run tournament_test.py and see if all the test cases work
-3. Command to run tournament_test.py in the command promt is python tournament_test.py
+3. Command to run tournament_test.py in the command promt is 'python tournament_test.py'
