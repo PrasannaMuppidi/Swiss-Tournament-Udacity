@@ -26,4 +26,4 @@ Contains the test cases for tournament.py
 
 1. In Vagrant open psql and copy the psql commands from tournament.sql and run 
 2. Run tournament_test.py and see if all the test cases work
-3. Command to run tournament_test.py in the command promt is 'python tournament_test.py'
+3. Command to run tournament_test.py in the command promt is `python tournament_test.py`
