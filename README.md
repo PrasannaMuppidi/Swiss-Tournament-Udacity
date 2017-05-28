@@ -9,18 +9,18 @@ and writing the code that will use it.
 
 tournament.py
 
-Contains the implementation for the Swiss system tournament
+This file contains the implementation for the Swiss system tournament
 
 tournament.sql
 
-Contains the SQL queries to create 
- 1. one database(tournament),
- 2. two tables(players, Matches)
- 3. one View(standings)
+This file contains the SQL queries to create 
+ 1. one Database(`tournament`),
+ 2. two Tables(`players`, `Matches`)
+ 3. one View(`standings`)
 
 tournament_test.py
 
-Contains the test cases for tournament.py
+This file contains the test cases for `tournament.py`
 
 ## How to run:
 
